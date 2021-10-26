@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
-const getConnection = require('./src/config/mongo.config')
+const getConnection = require('./src/config/database.init')
 const port = process.env.PORT
 
 const app = express()
@@ -9,12 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 try {
-  getConnection({
-    user: process.env.MONGO_USER,
-    password: process.env.MONGO_PASSWORD,
-    cluster: process.env.MONGO_CLUSTER,
-    database: process.env.MONGO_DATABASE
-  })
+  getConnection('mongodb://localhost/cotti-development')
 } catch (error) {
   console.log(error)
 }
