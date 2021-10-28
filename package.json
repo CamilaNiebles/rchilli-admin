@@ -1,12 +1,12 @@
 {
-  "name": "firebase-basic",
+  "name": "rchilli-admin",
   "version": "1.0.0",
-  "description": "Project to run firebase connection",
+  "description": "Project to admin rchilli records",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles"
   },
   "author": "CNieblesR",
   "license": "ISC",
@@ -19,6 +19,8 @@
     "mongoose": "^6.0.11"
   },
   "devDependencies": {
+    "jest": "^27.3.1",
+    "mongodb-memory-server": "^7.5.1",
     "nodemon": "^2.0.13"
   }
 }
