@@ -1,4 +1,5 @@
-const Rchilli = require('../models/rchilli.repository')
+const Rchilli = require('../models/rchilli.model')
+const { validateError } = require('./utils.repository')
 
 const createRecord = async function (rchilliData) {
   try {
@@ -29,14 +30,6 @@ const getByEmail = async function (email) {
   } catch (error) {
     throw error
   }
-}
-
-function validateError(error) {
-  const { code } = error
-  if (code === 11000) {
-    throw new Error('DuplicateKey')
-  }
-  return error
 }
 
 module.exports = {

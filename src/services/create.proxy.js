@@ -2,7 +2,7 @@ const {
   createRecord,
   getByEmail,
   updateCompany
-} = require('../repositories/proxy')
+} = require('../repositories/proxy.repository')
 module.exports = async (rchilliData) => {
   const { email, company: companyArray } = rchilliData
   const [company] = companyArray
@@ -32,5 +32,6 @@ async function validateCompanies(email, company) {
   if (companyExists) {
     throw new Error(`${email} already exists`)
   }
+
   return updateCompany(email, company)
 }
