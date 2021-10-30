@@ -3,7 +3,7 @@ const {
   createRecord,
   getByEmail,
   updateCompany
-} = require('../../src/repositories/proxy')
+} = require('../../src/repositories/proxy.repository')
 const rchilliDocMock = require('../mocks/rchilli.document')
 
 //validate connection  to in memory mongo server

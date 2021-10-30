@@ -10,6 +10,16 @@ const createRecord = async function (rchilliData) {
   }
 }
 
+const getByEmail = async function (email) {
+  try {
+    const response = await RchilliCompany.find({ email }).lean()
+    return response
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
-  createRecord
+  createRecord,
+  getByEmail
 }
